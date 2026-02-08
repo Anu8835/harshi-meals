@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshi MealSolutions | Master Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #f8fafc; }
+        .tab-content { display: none; }
+        .active-tab { display: block; }
+        .glass { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); color: white; border-radius: 2rem; }
+        .typing-dot { width: 4px; height: 4px; background: #64748b; border-radius: 50%; animation: bounce 1.4s infinite; }
+        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+        .hero-img { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1760&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        /* Floating WhatsApp Style */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; padding: 12px 20px; display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b z-50 flex justify-center gap-8 py-4 shadow-sm">
+        <button onclick="showTab('customer-view', this)" class="text-[10px] font-black text-orange-600 border-b-2 border-orange-600 pb-1 uppercase">Customer Website</button>
+        <button onclick="showTab('owner-dashboard', this)" class="text-[10px] font-black text-slate-400 pb-1 uppercase">Owner Dashboard</button>
+    </nav>
+
+    <div id="customer-view" class="tab-content active-tab pt-16">
+        <header class="hero-img h-[45vh] flex flex-col items-center justify-center text-center px-6 text-white">
+            <h1 class="text-3xl font-black italic uppercase tracking-tighter">HARSHI <span class="text-orange-500">MEALSOLUTIONS</span></h1>
+            <p class="text-[10px] mt-2 font-bold opacity-80 uppercase tracking-widest">Ghar Ka Shuddh Khana | जय श्री राम</p>
+        </header>
+
+        <a onclick="triggerAutomation()" href="https://wa.me/919958564099?text=Menu" class="whatsapp-float hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.484 2.247 2.247 3.484 5.232 3.484 8.404 0 6.556-5.332 11.888-11.888 11.888-2.003 0-3.963-.51-5.703-1.487l-6.084 1.594zm6.275-3.321c1.554.921 3.13 1.403 4.755 1.403 5.4 0 9.794-4.394 9.794-9.794 0-5.4-4.394-9.794-9.794-9.794-5.4 0-9.794 4.394-9.794 9.794 0 1.83.513 3.535 1.481 4.965l-1.018 3.712 3.824-.999zm12.446-6.382c-.314-.157-1.859-.918-2.149-1.022-.29-.105-.502-.157-.712.157-.21.314-.813 1.022-.996 1.231-.183.209-.366.236-.68.079-.314-.157-1.325-.488-2.524-1.558-.933-.832-1.563-1.86-1.747-2.174-.183-.314-.02-.484.137-.64.142-.141.314-.366.471-.55.157-.183.209-.314.314-.524.105-.21.052-.393-.026-.55-.079-.157-.712-1.714-.976-2.35-.257-.619-.516-.534-.712-.544-.184-.01-.393-.012-.602-.012s-.55.079-.838.393c-.288.314-1.1.1 .075-1.1 2.646 0 1.572.524 1.572 1.336 0 .812-.524 1.571-1.1 1.728-.183.052-.366.079-.55.079z"/></svg>
+            <span class="text-xs font-bold uppercase tracking-widest">Order On WhatsApp</span>
+        </a>
+
+        <section class="max-w-5xl mx-auto -mt-12 px-6 pb-12 grid md:grid-cols-2 gap-6 relative z-10">
+            <div class="bg-white p-6 rounded-3xl shadow-xl text-center border-b-4 border-slate-100">
+                <span class="text-[8px] bg-slate-100 text-slate-500 px-3 py-1 rounded-full uppercase font-bold">Standard</span>
+                <div class="text-4xl font-black mt-2">₹60<span class="text-sm opacity-20">/-</span></div>
+                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed">रोटी, चावल, दो सब्जी, रायता और सलाद।</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-xl text-center border-b-4 border-orange-500">
+                <span class="text-[8px] bg-orange-100 text-orange-600 px-3 py-1 rounded-full uppercase font-bold">Premium</span>
+                <div class="text-4xl font-black mt-2">₹75<span class="text-sm opacity-20">/-</span></div>
+                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed">Standard Thali + **डेली स्पेशल मीठा**</p>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-6 mb-20 text-center">
+            <h4 class="font-black text-sm mb-6 uppercase tracking-widest">Hamaara Weekly Menu</h4>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-[9px] font-bold">
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">MON: कढ़ी पकौड़ा, हलवा</div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">TUE: आलू टमाटर, लड्डू</div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">WED: राजमा चावल, खीर</div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">THU: सफेद चने, गुलाब जामुन</div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">FRI: पीली दाल, जलेबी</div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">SAT: मटर पनीर, बालूशाही</div>
+            </div>
+        </section>
+    </div>
+
+    <div id="owner-dashboard" class="tab-content pt-20 px-4">
+        <div class="max-w-xl mx-auto space-y-4">
+            <div class="text-center mb-6">
+                <h2 class="text-sm font-black text-slate-800 uppercase italic">BizAuto Commander v11.5</h2>
+                <p class="text-[9px] text-slate-400">Targeting Number: 9958564099</p>
+            </div>
+
+            <div class="glass p-6 border-l-4 border-green-500">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[9px] font-black uppercase tracking-widest">WhatsApp Link</span>
+                    <span id="sync-status" class="text-[8px] bg-red-900 text-white px-2 py-0.5 rounded-full uppercase">Offline</span>
+                </div>
+                <button onclick="startSync()" id="sync-btn" class="w-full bg-green-600 py-4 rounded-2xl font-black text-[10px] uppercase shadow-lg shadow-green-900/20">Sync 9958564099</button>
+            </div>
+
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-[9px] font-black uppercase tracking-widest">Live Automation Activity</h3>
+                    <div id="typing" class="hidden flex gap-1"><div class="typing-dot"></div><div class="typing-dot" style="animation-delay: 0.2s"></div></div>
+                </div>
+                <div id="bot-log" class="h-64 overflow-y-auto bg-black/40 p-4 rounded-2xl text-[9px] font-mono text-slate-400 space-y-2 border border-slate-800 leading-relaxed">
+                    > Dash Ready. Click Sync to Start Listening to Website.
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const MENU_DB = {
+        1: { main: "कढ़ी पकौड़ा + आलू जीरा", sweet: "हलवा" },
+        2: { main: "आलू टमाटर + सीताफल", sweet: "लड्डू" },
+        3: { main: "राजमा + फूलगोभी", sweet: "खीर" },
+        4: { main: "सफेद चने + भिण्डी", sweet: "गुलाब जामुन" },
+        5: { main: "पीली दाल + बैंगन भरता", sweet: "जलेबी" },
+        6: { main: "मटर पनीर + काली दाल", sweet: "बालूशाही" }
+    };
+
+    let syncActive = false;
+
+    function showTab(id, el) {
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active-tab'));
+        document.getElementById(id).classList.add('active-tab');
+        document.querySelectorAll('nav button').forEach(b => { b.classList.remove('text-orange-600', 'border-b-2', 'border-orange-600'); b.classList.add('text-slate-400'); });
+        el.classList.add('text-orange-600', 'border-b-2', 'border-orange-600');
+        el.classList.remove('text-slate-400');
+    }
+
+    function startSync() {
+        const btn = document.getElementById('sync-btn');
+        btn.innerText = "LINKING WHATSAPP...";
+        setTimeout(() => {
+            syncActive = true;
+            document.getElementById('sync-status').innerText = "ONLINE";
+            document.getElementById('sync-status').className = "text-[8px] bg-green-900 text-white px-2 py-0.5 rounded-full uppercase";
+            btn.innerText = "ACTIVE: 9958564099 ✅";
+            btn.classList.replace('bg-green-600', 'bg-slate-700');
+            log("🛡️ Privacy Shield Active. Bot Listening to 'Menu' requests.");
+        }, 1500);
+    }
+
+    function triggerAutomation() {
+        if(!syncActive) return;
+        
+        // Simulating the trigger when website button is clicked
+        setTimeout(() => {
+            document.getElementById('typing').classList.remove('hidden');
+            log("📩 Incoming from Website: Client sent 'Menu'"); 
+            
+            setTimeout(() => {
+                document.getElementById('typing').classList.add('hidden');
+                const day = new Date().getDay();
+                const m = MENU_DB[day] || { main: "Special Meal", sweet: "Sweet" };
+                
+                const reply = `*HARSHI MEALSOLUTIONS*\n\nToday's Special:\n✅ Standard (₹60): ${m.main}\n⭐ Premium (₹75): Standard + ${m.sweet}\n\nOrder confirm karne ke liye YES likhein.`;
+                
+                log(`🤖 Auto-Replied to Client with today's ${day} schedule.`);
+                log(`📲 Mirrored to Owner: 9958564099`);
+            }, 5000); // 5 sec human-like delay
+        }, 500);
+    }
+
+    function log(m) {
+        const b = document.getElementById('bot-log');
+        b.innerHTML = `<div class="border-l-2 border-blue-500 pl-2">> ${m}</div>` + b.innerHTML;
+    }
+</script>
+</body>
+</html>
