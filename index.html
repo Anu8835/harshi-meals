@@ -1,109 +1,232 @@
 <!DOCTYPE html>
-<html lang="hi" class="h-full">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshi Meal Solutions | 100% Veg Home-Cooked Tiffin Service</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; background: #fff7ed; scroll-behavior: smooth; }
-        .meal-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .meal-card:hover { transform: translateY(-12px); }
-        .meal-image-container {
-            height: 250px;
-            background: white;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-        }
-        .meal-image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshil Meal Solution</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* MENU CARD */
+.menu-card {
+  min-width: 280px;
+  scroll-snap-align: start;
+  transition: all 0.4s ease;
+}
+.menu-container {
+  scroll-snap-type: x mandatory;
+}
+.menu-card.active {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  border: 3px solid #f59e0b;
+}
+
+/* NAV UNDERLINE */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #f59e0b;
+  transition: 0.4s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+</style>
+
 </head>
-<body class="antialiased">
+<body class="bg-gray-50">
 
-    <nav class="bg-white/95 backdrop-blur-md border-b border-orange-100 py-4 px-6 sticky top-0 z-50 shadow-sm flex justify-between items-center">
-        <div>
-            <h1 class="text-xl md:text-2xl font-black text-orange-600 uppercase italic">HARSHI MEAL SOLUTIONS</h1>
-            <p class="text-[9px] font-bold text-gray-500 tracking-widest uppercase">Ghar Ka Shuddh & Veg Khana</p>
-        </div>
-        <a href="https://wa.me/919958564099?text=Namaste, I want to order a meal." class="bg-green-600 hover:bg-green-700 text-white text-[10px] md:text-xs font-bold px-5 py-2.5 rounded-full transition-all shadow-md uppercase">
-            WhatsApp Order
-        </a>
-    </nav>
+<!-- PREMIUM NAVBAR -->
+<header id="navbar"
+class="fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md">
 
-    <section id="pricing" class="max-w-6xl mx-auto py-16 px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-black text-gray-800 uppercase">Hamari <span class="gradient-text">Special Thalis</span></h2>
-            <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-        </div>
+<div id="navInner"
+class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5 transition-all duration-500">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            
-            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden meal-card border border-orange-50">
-                <div class="meal-image-container">
-                    <img src="https://raw.githubusercontent.com/Anu8835/harshi-meals/main/Standard%20Meal.png" 
-                         alt="Standard Veg Thali" 
-                         onerror="this.src='https://placehold.co/600x400/fff7ed/ea580c?text=Standard+Meal'">
-                </div>
-                <div class="p-8 text-center">
-                    <h3 class="text-xl font-black text-gray-700 uppercase tracking-tight">Standard Meal</h3>
-                    <div class="text-5xl font-black text-gray-900 my-4">₹60<span class="text-lg text-gray-400 font-medium">/thali</span></div>
-                    <p class="text-sm text-gray-600 mb-8 font-medium leading-relaxed">
-                        4 रोटी • चावल • दो सब्जी • रायता • सलाद
-                    </p>
-                    <a href="https://wa.me/919958564099?text=Order%20Standard%20Thali%20₹60" class="block w-full bg-orange-100 hover:bg-orange-600 hover:text-white text-orange-700 font-bold py-4 rounded-2xl uppercase text-xs tracking-widest transition-all">
-                        Order Now
-                    </a>
-                </div>
-            </div>
+<h1 id="logo"
+class="text-lg md:text-xl font-semibold tracking-wider text-white transition-all duration-500">
+🚩 जय श्री राम | Harshil Meal Solution
+</h1>
 
-            <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden meal-card border-2 border-orange-500 relative">
-                <div class="absolute top-4 right-4 bg-orange-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase z-10 shadow-lg">Popular Choice</div>
-                <div class="meal-image-container">
-                    <img src="https://raw.githubusercontent.com/Anu8835/harshi-meals/main/Premium%20Meal.png" 
-                         alt="Premium Veg Thali" 
-                         onerror="this.src='https://placehold.co/600x400/ffedd5/9a3412?text=Premium+Meal'">
-                </div>
-                <div class="p-8 text-center bg-gradient-to-b from-white to-orange-50">
-                    <h3 class="text-xl font-black text-orange-600 uppercase tracking-tight">Premium Meal</h3>
-                    <div class="text-5xl font-black text-gray-900 my-4">₹75<span class="text-lg text-orange-400 font-medium">/thali</span></div>
-                    <p class="text-sm text-orange-900 font-bold mb-8 italic underline decoration-orange-300">
-                        ✨ Standard Meal + Daily Special Sweet 🍬
-                    </p>
-                    <a href="https://wa.me/919958564099?text=Order%20Premium%20Thali%20₹75" class="block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-2xl uppercase text-xs tracking-widest transition-all shadow-lg shadow-orange-200">
-                        Order Now
-                    </a>
-                </div>
-            </div>
+<nav class="hidden md:flex space-x-8 font-medium text-white">
+<a href="#" class="nav-link relative">Home</a>
+<a href="#menu" class="nav-link relative">Menu</a>
+<a href="#booking" class="nav-link relative">Booking</a>
+</nav>
 
-        </div>
-    </section>
+<a href="https://wa.me/918287404099" target="_blank"
+class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition">
+WhatsApp
+</a>
 
-    <footer class="bg-gray-900 text-white py-12 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h5 class="text-xl font-black italic uppercase text-orange-500 mb-6">Harshi Meal Solutions</h5>
-            <div class="flex flex-col md:flex-row justify-center gap-8 mb-10 text-sm font-bold">
-                <a href="tel:8287404099" class="hover:text-orange-400 transition-colors">📞 8287404099</a>
-                <a href="tel:9958564099" class="hover:text-orange-400 transition-colors">📞 9958564099</a>
-                <a href="mailto:harshimealsolutions@gmail.com" class="hover:text-orange-400 transition-colors border-b border-orange-900 pb-1">✉️ harshimealsolutions@gmail.com</a>
-            </div>
-            <p class="text-[10px] uppercase tracking-[0.4em] opacity-30">🚩 जय श्री राम © 2026 Harshi Meal Solutions</p>
-        </div>
-    </footer>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="relative h-[70vh] flex items-center justify-center text-white mt-20">
+
+<img src="https://images.unsplash.com/photo-1604908554025-4f3b9f7c6f89"
+class="absolute inset-0 w-full h-full object-cover" alt="Veg Food">
+
+<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+<div class="relative text-center px-6">
+<h2 class="text-5xl font-extrabold mb-6">Premium Vegetarian Catering Services</h2>
+<p class="text-lg">Pure Veg • Corporate • Events • Daily Tiffin</p>
+</div>
+
+</section>
+
+<!-- WEEKLY MENU -->
+<section id="menu" class="py-20 px-6 bg-white">
+<div class="max-w-7xl mx-auto text-center">
+<h2 class="text-4xl font-extrabold mb-12">Premium Weekly Menu</h2>
+
+<div id="menuSlider" class="menu-container flex gap-6 overflow-x-auto scroll-smooth pb-6">
+
+<div class="menu-card bg-red-100 p-6 rounded-2xl" data-day="1">
+<h3 class="text-2xl font-bold text-red-600 mb-4">Monday</h3>
+<ul class="space-y-2 font-medium">
+<li>Dal Tadka</li><li>Aloo Gobhi</li><li>Jeera Rice</li><li>4 Roti</li><li>Salad</li>
+</ul>
+</div>
+
+<div class="menu-card bg-yellow-100 p-6 rounded-2xl" data-day="2">
+<h3 class="text-2xl font-bold text-yellow-600 mb-4">Tuesday</h3>
+<ul class="space-y-2 font-medium">
+<li>Rajma</li><li>Mix Veg</li><li>Rice</li><li>4 Roti</li><li>Salad</li>
+</ul>
+</div>
+
+<div class="menu-card bg-green-100 p-6 rounded-2xl" data-day="3">
+<h3 class="text-2xl font-bold text-green-600 mb-4">Wednesday</h3>
+<ul class="space-y-2 font-medium">
+<li>Chole</li><li>Paneer Bhurji</li><li>Jeera Rice</li><li>4 Roti</li><li>Salad</li>
+</ul>
+</div>
+
+<div class="menu-card bg-blue-100 p-6 rounded-2xl" data-day="4">
+<h3 class="text-2xl font-bold text-blue-600 mb-4">Thursday</h3>
+<ul class="space-y-2 font-medium">
+<li>Dal Fry</li><li>Bhindi Masala</li><li>Rice</li><li>4 Roti</li><li>Salad</li>
+</ul>
+</div>
+
+<div class="menu-card bg-purple-100 p-6 rounded-2xl" data-day="5">
+<h3 class="text-2xl font-bold text-purple-600 mb-4">Friday</h3>
+<ul class="space-y-2 font-medium">
+<li>Kadhi Pakora</li><li>Aloo Matar</li><li>Rice</li><li>4 Roti</li><li>Salad</li>
+</ul>
+</div>
+
+<div class="menu-card bg-pink-100 p-6 rounded-2xl" data-day="6">
+<h3 class="text-2xl font-bold text-pink-600 mb-4">Saturday</h3>
+<ul class="space-y-2 font-medium">
+<li>Dal Makhani</li><li>Shahi Paneer</li><li>Pulao</li><li>4 Roti</li><li>Salad</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="py-20 bg-gray-900 text-white px-6">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl font-bold mb-10 text-amber-400">
+Book Your Veg Catering Today
+</h2>
+
+<form action="mailto:harshimealsolutions@gmail.com" method="post" enctype="text/plain"
+class="bg-white text-black p-8 rounded-2xl space-y-6">
+
+<input type="text" name="Name" placeholder="Your Name"
+class="w-full p-3 border rounded-lg" required>
+
+<input type="tel" name="Mobile" placeholder="Your Mobile Number"
+class="w-full p-3 border rounded-lg" required>
+
+<input type="email" name="Email" placeholder="Your Email"
+class="w-full p-3 border rounded-lg" required>
+
+<select name="Service Day" class="w-full p-3 border rounded-lg">
+<option>Monday</option><option>Tuesday</option>
+<option>Wednesday</option><option>Thursday</option>
+<option>Friday</option><option>Saturday</option>
+</select>
+
+<textarea name="Message" rows="4" placeholder="Your Message"
+class="w-full p-3 border rounded-lg"></textarea>
+
+<button type="submit"
+class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-bold transition">
+Submit Booking
+</button>
+
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-12 px-6 text-center">
+<p class="text-sm">📞 8287404099 | 9958564099</p>
+<p class="text-orange-400 font-bold mt-2">✉️ harshimealsolutions@gmail.com</p>
+<p class="text-[10px] opacity-40 uppercase tracking-[0.3em] mt-4">
+🚩 जय श्री राम © 2026 Harshil Meal Solution
+</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/918287404099" target="_blank"
+class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg text-xl z-50">
+💬
+</a>
+
+<script>
+// NAVBAR SCROLL EFFECT
+const navbar = document.getElementById("navbar");
+const navInner = document.getElementById("navInner");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 50) {
+    navbar.classList.add("bg-gray-900/90", "shadow-xl");
+    navInner.classList.remove("py-5");
+    navInner.classList.add("py-2");
+  } else {
+    navbar.classList.remove("bg-gray-900/90", "shadow-xl");
+    navInner.classList.remove("py-2");
+    navInner.classList.add("py-5");
+  }
+});
+
+// AUTO MENU SLIDE
+const slider = document.getElementById("menuSlider");
+const cards = document.querySelectorAll(".menu-card");
+
+let scrollAmount = 0;
+setInterval(() => {
+  slider.scrollBy({ left: 300, behavior: 'smooth' });
+  scrollAmount += 300;
+  if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+    slider.scrollTo({ left: 0, behavior: 'smooth' });
+    scrollAmount = 0;
+  }
+}, 3000);
+
+// TODAY HIGHLIGHT
+const today = new Date().getDay();
+cards.forEach(card => {
+  if (parseInt(card.dataset.day) === today) {
+    card.classList.add("active");
+  }
+});
+</script>
 
 </body>
 </html>
