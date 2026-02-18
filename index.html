@@ -42,20 +42,23 @@
 </head>
 <body class="bg-gray-50">
 
-<!-- PREMIUM NAVBAR -->
 <header id="navbar"
 class="fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md">
 
 <div id="navInner"
 class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5 transition-all duration-500">
 
-<h1 id="logo"
-class="text-lg md:text-xl font-semibold tracking-wider text-white transition-all duration-500">
-🚩 जय श्री राम | Harshil Meal Solution
-</h1>
+<div class="flex items-center gap-3">
+  <img src="https://raw.githubusercontent.com/Anu8835/harshi-meals/main/logo.png" alt="HMS Logo" class="h-10 md:h-12 object-contain">
+  <h1 id="logo"
+  class="text-lg md:text-xl font-semibold tracking-wider text-white transition-all duration-500">
+  🚩 जय श्री राम | Harshil Meal Solution
+  </h1>
+</div>
 
 <nav class="hidden md:flex space-x-8 font-medium text-white">
 <a href="#" class="nav-link relative">Home</a>
+<a href="#plans" class="nav-link relative">Plans</a>
 <a href="#menu" class="nav-link relative">Menu</a>
 <a href="#booking" class="nav-link relative">Booking</a>
 </nav>
@@ -68,11 +71,10 @@ WhatsApp
 </div>
 </header>
 
-<!-- HERO SECTION -->
 <section class="relative h-[70vh] flex items-center justify-center text-white mt-20">
 
-<img src="https://images.unsplash.com/photo-1604908554025-4f3b9f7c6f89"
-class="absolute inset-0 w-full h-full object-cover" alt="Veg Food">
+<img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop"
+class="absolute inset-0 w-full h-full object-cover" alt="Premium Catering Service">
 
 <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
@@ -83,7 +85,36 @@ class="absolute inset-0 w-full h-full object-cover" alt="Veg Food">
 
 </section>
 
-<!-- WEEKLY MENU -->
+<section id="plans" class="py-20 px-6 bg-gray-50">
+<div class="max-w-7xl mx-auto text-center">
+<h2 class="text-4xl font-extrabold mb-12">Our Meal Plans</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+<img src="https://raw.githubusercontent.com/Anu8835/harshi-meals/main/Standard%20Meal.png" class="w-full h-48 object-contain mb-4" alt="Standard Meal">
+<h3 class="text-2xl font-bold text-gray-800">Standard Meal</h3>
+<p class="text-amber-600 text-3xl font-bold my-2">Rs. 67</p>
+<p class="text-gray-600">Healthy & Simple Daily Meal</p>
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-amber-400 transform scale-105">
+<img src="https://raw.githubusercontent.com/Anu8835/harshi-meals/main/Special%20meal.png" class="w-full h-48 object-contain mb-4" alt="Special Meal">
+<h3 class="text-2xl font-bold text-gray-800">Special Meal</h3>
+<p class="text-amber-600 text-3xl font-bold my-2">Rs. 75</p>
+<p class="text-gray-600">Extra Sabzi & Homemade Taste</p>
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+<img src="https://raw.githubusercontent.com/Anu8835/harshi-meals/main/Premium%20Meal.png" class="w-full h-48 object-contain mb-4" alt="Premium Meal">
+<h3 class="text-2xl font-bold text-gray-800">Premium Meal</h3>
+<p class="text-amber-600 text-3xl font-bold my-2">Rs. 100</p>
+<p class="text-gray-600">Full Premium Thali with Sweet</p>
+</div>
+
+</div>
+</div>
+</section>
+
 <section id="menu" class="py-20 px-6 bg-white">
 <div class="max-w-7xl mx-auto text-center">
 <h2 class="text-4xl font-extrabold mb-12">Premium Weekly Menu</h2>
@@ -136,7 +167,6 @@ class="absolute inset-0 w-full h-full object-cover" alt="Veg Food">
 </div>
 </section>
 
-<!-- BOOKING -->
 <section id="booking" class="py-20 bg-gray-900 text-white px-6">
 <div class="max-w-4xl mx-auto text-center">
 <h2 class="text-4xl font-bold mb-10 text-amber-400">
@@ -173,7 +203,6 @@ Submit Booking
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="bg-gray-900 text-white py-12 px-6 text-center">
 <p class="text-sm">📞 8287404099 | 9958564099</p>
 <p class="text-orange-400 font-bold mt-2">✉️ harshimealsolutions@gmail.com</p>
@@ -182,7 +211,6 @@ Submit Booking
 </p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/918287404099" target="_blank"
 class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg text-xl z-50">
 💬
